@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  * Created by brunohorta on 07/04/2017.
  */
 public class Filter {
-    private Logger logger = Logger.getLogger(getClass().getSimpleName());
+    private static Logger logger = Logger.getLogger("");
 
     public static Predicate[] parseToPredicate(String q, CriteriaBuilder cb, Root<?> member) throws InvalidSearchField {
         if (q == null) {
@@ -79,7 +79,7 @@ public class Filter {
         }
     }
 
-    public Object computeIntance(Path path, Object o) {
+    private static Object computeIntance(Path path, Object o) {
         if (path.getJavaType().isEnum()) {
             return Enum.valueOf(path.getJavaType(), o.toString().trim());
         }
