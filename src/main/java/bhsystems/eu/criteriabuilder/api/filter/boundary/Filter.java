@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 public class Filter {
     private Logger logger = Logger.getLogger(getClass().getSimpleName());
 
-    public Predicate[] parseToPredicate(String q, CriteriaBuilder cb, Root<?> member) throws InvalidSearchField {
+    public static Predicate[] parseToPredicate(String q, CriteriaBuilder cb, Root<?> member) throws InvalidSearchField {
         if (q == null) {
             return new Predicate[0];
         }
